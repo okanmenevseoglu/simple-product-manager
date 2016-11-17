@@ -1,0 +1,47 @@
+#productBanner {
+    background-color: white;
+    display: inline;
+}
+
+#mainDiv {
+    padding: 30px;
+    text-align: center;
+}
+
+/* Product Page */
+#addProduct, #productContainer, #successImage, #editProduct {
+    position: relative;
+    top: 50%;
+    border: dotted black;
+    border-radius: 2em;
+    margin-bottom: 5em;
+}
+
+#returnMain {
+    position: relative;
+    margin-bottom: 5em;
+}
+
+#productFormSubmit, #productFormCancel {
+    display: inline-block;
+}
+
+.productImage, #successImage {
+    max-width: 600px;
+    width: 100%;
+}
+
+.btn-responsive {
+    width: 30%;
+    min-width: 78px;
+}
+
+.panel-product {
+    display: inline-block;
+    min-width: 200px;
+}
+
+.customCaptcha {
+    margin: 0 auto;
+    width: 35%;
+}

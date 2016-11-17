@@ -1,0 +1,81 @@
+<div id="productContainer" class="jumbotron">
+    <h1>Products</h1>
+    <a class="btn btn-primary" ui-sref="addProduct">
+        <h4>Add New Product</h4>
+    </a>
+    <hr/>
+    <div>
+        <div ng-repeat="product in products" ng-if="$index % 3 == 0" class="row">
+
+            <div class="col-xs-4 panel-group panel-product" ng-if="products[$index] != null">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <b>Product Name:</b> {{products[$index].title}}<br>
+                            <button type="button" class="btn btn-primary btn-responsive"
+                                    ng-click="setProductId(products[$index].id)" ui-sref="editProduct">Edit <span
+                                    class="glyphicon glyphicon-edit"></span>
+                            </button>
+                            <button type="button" class="btn btn-primary btn-responsive"
+                                    ng-click="deleteProduct(products[$index].id)">Delete <span
+                                    class="glyphicon glyphicon-erase"></span>
+                            </button>
+                        </h4>
+                    </div>
+                    <img class="productImage" src="app/media/sample.png" width="300em">
+                    <br/>
+                    <h4>Description: </h4> {{products[$index].description}}
+                    <h4>Price: {{products[$index].price}} TL</h4>
+                </div>
+            </div>
+
+            <div class="col-xs-4 panel-group panel-product" ng-if="products[$index + 1] != null">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <b>Product Name:</b> {{products[$index + 1].title}}<br>
+                            <button type="button" class="btn btn-primary btn-responsive"
+                                    ng-click="setProductId(products[$index + 1].id)" ui-sref="editProduct">Edit <span
+                                    class="glyphicon glyphicon-edit"></span>
+                            </button>
+                            <button type="button" class="btn btn-primary btn-responsive"
+                                    ng-click="deleteProduct(products[$index + 1].id)">Delete <span
+                                    class="glyphicon glyphicon-erase"></span>
+                            </button>
+                        </h4>
+                    </div>
+                    <img class="productImage" src="app/media/sample.png" width="300em">
+                    <br/>
+                    <h4>Description: </h4> {{products[$index].description}}
+                    <h4>Price: {{products[$index + 1].price}} TL</h4>
+                </div>
+            </div>
+
+            <div class="col-xs-4 panel-group panel-product" ng-if="products[$index + 2] != null">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <b>Product Name:</b> {{products[$index + 2].title}}<br>
+                            <button type="button" class="btn btn-primary btn-responsive"
+                                    ng-click="setProductId(products[$index + 2].id)" ui-sref="editProduct">Edit <span
+                                    class="glyphicon glyphicon-edit"></span>
+                            </button>
+                            <button type="button" class="btn btn-primary btn-responsive"
+                                    ng-click="deleteProduct(products[$index + 2].id)">Delete <span
+                                    class="glyphicon glyphicon-erase"></span>
+                            </button>
+                        </h4>
+                    </div>
+                    <img class="productImage" src="app/media/sample.png" width="300em">
+                    <br/>
+                    <h4>Description: </h4> {{products[$index].description}}
+                    <h4>Price: {{products[$index + 2].price}} TL</h4>
+                </div>
+            </div>
+        </div>
+        <div><h2 ng-if="products == '' || products == null">No products found.</h2></div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div id="editProduct" class="jumbotron">
+    <form name="productEditForm" ng-submit="editProduct(productEditForm.$valid)" novalidate>
+        <h1>Update Product</h1>
+        <h4>(*Remain empty if you don't want to change.)</h4>
+        <br/>
+        <fieldset class="form-group">
+            <label for="inputProductTitle">New Product Title*</label>
+            <input type="text" name="inputProductTitle" id="inputProductTitle" class="form-control"
+                   ng-model="productData.title" placeholder="{{product.title}}"/>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="inputProductDescription">New Product Description</label>
+            <textarea name="inputProductDescription" id="inputProductDescription" class="form-control"
+                      ng-model="productData.description" placeholder="{{product.description}}"></textarea>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="inputProductPrice">New Product Price*</label>
+            <input name="inputProductPrice" id="inputProductPrice" class="form-control"
+                   ng-model="productData.price" placeholder="{{product.price}}" onfocus="type='number'"/>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <div class="g-recaptcha customCaptcha" data-sitekey="!!YOUR KEY HERE!!"></div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <button type="button" id="productFormCancel" class="btn btn-lg btn-primary center-block" ui-sref="products"
+                    ng-click="setProductId(null)">
+                <span class="glyphicon glyphicon-backward"></span> Cancel
+            </button>
+            <button type="submit" id="productFormSubmit" class="btn btn-lg btn-primary center-block"
+                    ng-disabled="!productEditForm.$valid"><span class="glyphicon glyphicon-send"
+                                                                ui-sref="success"></span> Submit
+            </button>
+        </fieldset>
+    </form>
+</div>

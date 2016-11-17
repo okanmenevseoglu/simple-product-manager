@@ -1,0 +1,38 @@
+<div id="addProduct" class="jumbotron">
+    <form name="productForm" ng-submit="submitProductForm(productForm.$valid)" novalidate>
+        <h1>Add New Product</h1>
+        <h4>(Please fill the required (*) fields.)</h4>
+        <br/>
+        <fieldset class="form-group">
+            <label for="inputProductTitle">Product Title*</label>
+            <input type="text" name="inputProductTitle" id="inputProductTitle" class="form-control"
+                   ng-model="productData.title" placeholder="Product Title" required/>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="inputProductDescription">Product Description</label>
+            <textarea name="inputProductDescription" id="inputProductDescription" class="form-control"
+                      ng-model="productData.description" placeholder="Product Description"></textarea>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label for="inputProductPrice">Product Price (TL) *</label>
+            <input name="inputProductPrice" id="inputProductPrice" class="form-control"
+                   ng-model="productData.price" placeholder="0" onfocus="type='number'" required/>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <div class="g-recaptcha customCaptcha" data-sitekey="!!YOUR KEY HERE!!"></div>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <button type="button" id="productFormCancel" class="btn btn-lg btn-primary center-block" ui-sref="products">
+                <span class="glyphicon glyphicon-backward"></span> Cancel
+            </button>
+            <button type="submit" id="productFormSubmit" class="btn btn-lg btn-primary center-block"
+                    ng-disabled="!productForm.$valid"><span class="glyphicon glyphicon-send" ui-sref="success"></span>
+                Submit
+            </button>
+        </fieldset>
+    </form>
+</div>
