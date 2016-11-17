@@ -135,13 +135,13 @@ product.controller('ProductCtrl', ['$scope', '$rootScope', '$state', '$timeout',
         if(answer === true) {
             ProductService.deleteProduct(producerId)
                 .success(function () {
-                    Notification.success("Silme Başarılı!");
+                    Notification.success("Product is deleted!");
                     $timeout(function () {
                         window.location.reload()
                     }, 500);
                 })
                 .error(function () {
-                    Notification.error("Silme Başarısız!");
+                    Notification.error("Product couldn't deleted! Bad Request!");
                 });
         }
     };
